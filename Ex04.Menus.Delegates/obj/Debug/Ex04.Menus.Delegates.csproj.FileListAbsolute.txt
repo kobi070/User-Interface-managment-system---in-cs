@@ -1,0 +1,7 @@
+C:\Users\Kobi\Desktop\A23 Ex04 KobiKuzi 316063908 TomerCohen 206895625\A23 Ex04 Kobi 316063908 Tomer 206895625\Ex04.Menus.Delegates\obj\Debug\Ex04.Menus.Delegates.csproj.AssemblyReference.cache
+C:\Users\Kobi\Desktop\A23 Ex04 KobiKuzi 316063908 TomerCohen 206895625\A23 Ex04 Kobi 316063908 Tomer 206895625\Ex04.Menus.Delegates\obj\Debug\Ex04.Menus.Delegates.csproj.CoreCompileInputs.cache
+C:\Users\Kobi\Desktop\A23 Ex04 KobiKuzi 316063908 TomerCohen 206895625\A23 Ex04 Kobi 316063908 Tomer 206895625\Ex04.Menus.Delegates\bin\Debug\Ex04.Menus.Delegates.dll.config
+C:\Users\Kobi\Desktop\A23 Ex04 KobiKuzi 316063908 TomerCohen 206895625\A23 Ex04 Kobi 316063908 Tomer 206895625\Ex04.Menus.Delegates\bin\Debug\Ex04.Menus.Delegates.dll
+C:\Users\Kobi\Desktop\A23 Ex04 KobiKuzi 316063908 TomerCohen 206895625\A23 Ex04 Kobi 316063908 Tomer 206895625\Ex04.Menus.Delegates\bin\Debug\Ex04.Menus.Delegates.pdb
+C:\Users\Kobi\Desktop\A23 Ex04 KobiKuzi 316063908 TomerCohen 206895625\A23 Ex04 Kobi 316063908 Tomer 206895625\Ex04.Menus.Delegates\obj\Debug\Ex04.Menus.Delegates.dll
+C:\Users\Kobi\Desktop\A23 Ex04 KobiKuzi 316063908 TomerCohen 206895625\A23 Ex04 Kobi 316063908 Tomer 206895625\Ex04.Menus.Delegates\obj\Debug\Ex04.Menus.Delegates.pdb
