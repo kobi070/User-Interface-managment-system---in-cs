@@ -7,4 +7,4 @@ The component was implemented using two different approaches: interfaces and del
 
 
 Best regards,
-Kobi, Tomer
+Kobi and Tomer
