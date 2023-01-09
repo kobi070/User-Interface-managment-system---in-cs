@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Ex04.Menus.Inerfaces;
-
+using Ex04.Menus.Interfaces;
 namespace Ex04.Menus.Test
 {
+
     public class TestInterfaces : IMenuItemObserver
     {
         public TestInterfaces(MainMenu o_UtilsMainMenu)
@@ -68,11 +65,6 @@ namespace Ex04.Menus.Test
             {
                 showVersion();
             }
-        }
-
-        public static void Main()
-        {
-
         }
     }
 }

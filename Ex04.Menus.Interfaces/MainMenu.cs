@@ -1,4 +1,4 @@
-﻿namespace Ex04.Menus.Inerfaces
+﻿namespace Ex04.Menus.Interfaces
 {
     using System;
     using System.Collections.Generic;
@@ -52,7 +52,6 @@
                 }
             }
         }
-
 
         private bool ChekIfChoiceIsValid(string i_ChoiceInString, int i_AmoutOfMenus)
         {

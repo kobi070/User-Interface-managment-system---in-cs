@@ -1,4 +1,4 @@
-﻿namespace Ex04.Menus.Inerfaces
+﻿namespace Ex04.Menus.Interfaces
 {
     using System;
     using System.Collections.Generic;
@@ -7,10 +7,10 @@
     public class MenuItem // Employee in our example
     {
         private readonly List<MenuItem> r_MenuItems; // sub-menus we might posses
-        private readonly MenuItem r_CurrentMenuItemsMainMenu = null;
-        private readonly string r_Title = string.Empty; // Tilte of the a menu/sub-menue
-        private readonly List<IMenuItemObserver> r_MenuItemObservers; // who is listening to our MenuItems => could be a few MainMenus
+        private MenuItem m_CurrentMenuItemsMainMenu = null;
+        private string m_Title = string.Empty; // Tilte of the a menu/sub-menue
 
+        private List<IMenuItemObserver> m_MenuItemObservers; // who is listening to our MenuItems => could be a few MainMenus
         public List<MenuItem> MenuItems
         {
             get { return this.r_MenuItems; }
@@ -20,32 +20,38 @@
         {
             get
             {
-                return this.r_CurrentMenuItemsMainMenu;
+                return this.m_CurrentMenuItemsMainMenu;
+            }
+
+            set
+            {
+                this.m_CurrentMenuItemsMainMenu = value;
             }
         }
 
         public string Title
         {
-            get { return this.r_Title; }
+            get { return this.m_Title; }
+            set { this.m_Title = value; }
         }
 
-        public List<IMenuItemObserver> MenuItemObservers
+        // add a listener to m_MenuItemObservers
+        public void AttachObserver(IMenuItemObserver i_MenuItemToAdd)
         {
-            get { return this.r_MenuItemObservers; }
+            this.m_MenuItemObservers.Add(i_MenuItemToAdd);
         }
 
-        // add a listener to r_MenuItemObservers
-        public void AttachObserver(IMenuItemObserver i_MenuItemObserver)
+        public void AttachSubObserver(MenuItem i_MenuItemToAdd)
         {
-            this.r_MenuItemObservers.Add(i_MenuItemObserver);
+            this.r_MenuItems.Add(i_MenuItemToAdd);
         }
 
-        // removes a listener to r_MenuItemObservers
-        public void DetachObserver(IMenuItemObserver i_MenuItemObserver)
+        // removes a listener to m_MenuItemObservers
+        public void DetachSubObserver(MenuItem i_MenuItemToRemove)
         {
             if (this.checkIfMenuItemIsSubMenu(this.CurrentMenuItemsMainMenu))
             {
-                this.r_MenuItemObservers.Remove(i_MenuItemObserver);
+                this.r_MenuItems.Remove(i_MenuItemToRemove);
             }
             else
             {
@@ -53,9 +59,14 @@
             }
         }
 
+        public void DetachObserver(IMenuItemObserver i_MenuItemToRemove)
+        {
+            this.m_MenuItemObservers.Remove(i_MenuItemToRemove);
+        }
+
         public void NotifyMenuItemObservers()
         {
-            foreach (IMenuItemObserver MenuItemObserver in this.r_MenuItemObservers)
+            foreach (IMenuItemObserver MenuItemObserver in this.m_MenuItemObservers)
             {
                 MenuItemObserver.menuItemChoice(this);
             }
@@ -64,7 +75,7 @@
         private bool checkIfMenuItemIsSubMenu(MenuItem i_MenuItem)
         {
             bool isSubMenu = false;
-            foreach (IMenuItemObserver MenuItemObserver in this.r_MenuItemObservers)
+            foreach (IMenuItemObserver MenuItemObserver in this.m_MenuItemObservers)
             {
                 if (i_MenuItem == MenuItemObserver)
                 {
@@ -80,7 +91,7 @@
         {
             StringBuilder stringBuilder = new StringBuilder();
 
-            stringBuilder.Append("**").Append(this.r_Title).AppendLine("**");
+            stringBuilder.Append("**").Append(this.m_Title).AppendLine("**");
             stringBuilder.AppendLine("================");
             for (int i = 1; i <= this.r_MenuItems.Count; i++)
             {
