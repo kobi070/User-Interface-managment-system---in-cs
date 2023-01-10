@@ -5,7 +5,7 @@
 
     public class MainMenu : MenuItem
     {
-        private readonly List<MenuItem> r_MenuItems = new List<MenuItem>();
+        private readonly List<MenuItem> m_MenuItems = new List<MenuItem>();
 
         public void Show()
         {
@@ -83,12 +83,12 @@
                 choiceAsString = Console.ReadLine();
                 if (this.ChekIfChoiceIsValid(choiceAsString, i_AmoutOfMenus))
                 {
-                    Console.WriteLine(string.Format("Invalid input. Please enter a number between 0 to {0}", i_AmoutOfMenus));
+                    int.TryParse(choiceAsString, out choiceAsInteger);
+                    isValid = true;
                 }
                 else
                 {
-                    int.TryParse(choiceAsString, out choiceAsInteger);
-                    isValid = true;
+                    Console.WriteLine(string.Format("Invalid input. Please enter a number between 0 to {0}", i_AmoutOfMenus));
                 }
             }
 

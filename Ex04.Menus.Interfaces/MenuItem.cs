@@ -6,14 +6,16 @@
 
     public class MenuItem // Employee in our example
     {
-        private readonly List<MenuItem> r_MenuItems; // sub-menus we might posses
+        private List<MenuItem> m_MenuItems = new List<MenuItem>(); // sub-menus we might posses
         private MenuItem m_CurrentMenuItemsMainMenu = null;
         private string m_Title = string.Empty; // Tilte of the a menu/sub-menue
 
-        private List<IMenuItemObserver> m_MenuItemObservers; // who is listening to our MenuItems => could be a few MainMenus
+        private List<IMenuItemObserver> m_MenuItemObservers = new List<IMenuItemObserver>(); // who is listening to our MenuItems => could be a few MainMenus
+
         public List<MenuItem> MenuItems
         {
-            get { return this.r_MenuItems; }
+            get { return this.m_MenuItems; }
+            set { this.m_MenuItems = value; }
         }
 
         public MenuItem CurrentMenuItemsMainMenu
@@ -43,7 +45,7 @@
 
         public void AttachSubObserver(MenuItem i_MenuItemToAdd)
         {
-            this.r_MenuItems.Add(i_MenuItemToAdd);
+            this.m_MenuItems.Add(i_MenuItemToAdd);
         }
 
         // removes a listener to m_MenuItemObservers
@@ -51,7 +53,7 @@
         {
             if (this.checkIfMenuItemIsSubMenu(this.CurrentMenuItemsMainMenu))
             {
-                this.r_MenuItems.Remove(i_MenuItemToRemove);
+                this.m_MenuItems.Remove(i_MenuItemToRemove);
             }
             else
             {
@@ -93,9 +95,9 @@
 
             stringBuilder.Append("**").Append(this.m_Title).AppendLine("**");
             stringBuilder.AppendLine("================");
-            for (int i = 1; i <= this.r_MenuItems.Count; i++)
+            for (int i = 1; i <= this.m_MenuItems.Count; i++)
             {
-                stringBuilder.Append(i.ToString()).Append(" -> ").AppendLine(this.r_MenuItems[i - 1].Title);
+                stringBuilder.Append(i.ToString()).Append(" -> ").AppendLine(this.m_MenuItems[i - 1].Title);
             }
 
             if (this is MainMenu)
@@ -108,7 +110,7 @@
             }
 
             stringBuilder.AppendLine("-------------------------");
-            stringBuilder.Append("Enter your request (1 to ").Append(r_MenuItems.Count).Append(" or press '0' to ");
+            stringBuilder.Append("Enter your request (1 to ").Append(m_MenuItems.Count).Append(" or press '0' to ");
             if (this is MainMenu)
             {
                 stringBuilder.Append("Exit).");
@@ -123,7 +125,7 @@
 
         public bool checkIfLeaf(MenuItem i_MenuItem)
         {
-            return this.r_MenuItems.Count == 0;
+            return this.m_MenuItems.Count == 0;
         }
     }
 }

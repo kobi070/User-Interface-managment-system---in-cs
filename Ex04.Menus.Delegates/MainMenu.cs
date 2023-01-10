@@ -6,7 +6,7 @@
     public class MainMenu : MenuItem
     {
 
-        private readonly List<MenuItem> r_MenuItems = new List<MenuItem>();
+        private readonly List<MenuItem> m_MenuItems = new List<MenuItem>();
 
         public void Show()
         {
