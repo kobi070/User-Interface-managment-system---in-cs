@@ -123,9 +123,9 @@
             return stringBuilder.ToString();
         }
 
-        public bool checkIfLeaf(MenuItem i_MenuItem)
+        public bool checkIfLeaf()
         {
-            return this.m_MenuItems.Count == 0;
+            return m_MenuItems.Count == 0;
         }
     }
 }

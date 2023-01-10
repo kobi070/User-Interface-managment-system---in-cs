@@ -57,7 +57,7 @@ namespace Ex04.Menus.Test
             {
                 showDate();
             }
-            else if (i_MenuItem.Title.Equals("Count Uppercase"))
+            else if (i_MenuItem.Title.Equals("Count Uppercases"))
             {
                 countUpperCase();
             }

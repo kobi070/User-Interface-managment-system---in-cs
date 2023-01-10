@@ -12,10 +12,10 @@
 
         public TestDelegatesAndEvents(MainMenu o_UtilsMainMenu)
         {
-            o_UtilsMainMenu.MenuItems[0].MenuItems[0].m_MenuItemChooseDelegate += showTime;
-            o_UtilsMainMenu.MenuItems[0].MenuItems[1].m_MenuItemChooseDelegate += showDate;
-            o_UtilsMainMenu.MenuItems[1].MenuItems[0].m_MenuItemChooseDelegate += countUppercase;
-            o_UtilsMainMenu.MenuItems[1].MenuItems[1].m_MenuItemChooseDelegate += showVersion;
+            o_UtilsMainMenu.MenuItems[0].MenuItems[0].m_MenuItemChooseDelegate += this.showTime;
+            o_UtilsMainMenu.MenuItems[0].MenuItems[1].m_MenuItemChooseDelegate += this.showDate;
+            o_UtilsMainMenu.MenuItems[1].MenuItems[0].m_MenuItemChooseDelegate += this.countUppercase;
+            o_UtilsMainMenu.MenuItems[1].MenuItems[1].m_MenuItemChooseDelegate += this.showVersion;
         }
 
         private void showTime()
@@ -61,7 +61,7 @@
             {
                 showDate();
             }
-            else if (i_MenuItem.Title.Equals("Count Upercase"))
+            else if (i_MenuItem.Title.Equals("Count Upercases"))
             {
                 countUppercase();
             }

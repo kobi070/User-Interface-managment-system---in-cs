@@ -40,7 +40,7 @@
                 else
                 {
                     choosenMenuItem = currentMenuItem.MenuItems[userChoice - 1];
-                    if (this.checkIfLeaf(choosenMenuItem))
+                    if (choosenMenuItem.checkIfLeaf())
                     {
                         Console.Clear();
                         choosenMenuItem.NotifyMenuItemObservers();
@@ -78,7 +78,7 @@
             bool isValid = false;
             string choiceAsString;
             int choiceAsInteger = 0;
-            if (!isValid)
+            while (!isValid)
             {
                 choiceAsString = Console.ReadLine();
                 if (this.ChekIfChoiceIsValid(choiceAsString, i_AmoutOfMenus))

@@ -51,7 +51,7 @@
             o_InterfacesMenuToBuildUpon.MenuItems[0].MenuItems[0].Title = "Show Version";
             o_InterfacesMenuToBuildUpon.MenuItems[0].MenuItems[0].CurrentMenuItemsMainMenu = o_InterfacesMenuToBuildUpon.MenuItems[0];
             o_InterfacesMenuToBuildUpon.MenuItems[0].AttachSubObserver(new Interfaces.MenuItem());
-            o_InterfacesMenuToBuildUpon.MenuItems[0].MenuItems[1].Title = "Count Uppercas";
+            o_InterfacesMenuToBuildUpon.MenuItems[0].MenuItems[1].Title = "Count Uppercases";
             o_InterfacesMenuToBuildUpon.MenuItems[0].MenuItems[1].CurrentMenuItemsMainMenu = o_InterfacesMenuToBuildUpon.MenuItems[0];
             o_InterfacesMenuToBuildUpon.MenuItems[1].AttachSubObserver(new Interfaces.MenuItem());
             o_InterfacesMenuToBuildUpon.MenuItems[1].MenuItems[0].Title = "Show Date";
@@ -73,12 +73,13 @@
             o_DelegatesMenuToBuilld.AttachSubObserver(new Delegates.MenuItem());
             o_DelegatesMenuToBuilld.MenuItems[1].Title = "**Dates/Time**";
             o_DelegatesMenuToBuilld.MenuItems[1].CurrentMenuItemsMainMenu = o_DelegatesMenuToBuilld;
+
             // create the actions in each sub-menu
             o_DelegatesMenuToBuilld.MenuItems[0].AttachSubObserver(new Delegates.MenuItem());
             o_DelegatesMenuToBuilld.MenuItems[0].MenuItems[0].Title = "Show Version";
             o_DelegatesMenuToBuilld.MenuItems[0].MenuItems[0].CurrentMenuItemsMainMenu = o_DelegatesMenuToBuilld.MenuItems[0];
             o_DelegatesMenuToBuilld.MenuItems[0].AttachSubObserver(new Delegates.MenuItem());
-            o_DelegatesMenuToBuilld.MenuItems[0].MenuItems[1].Title = "Count Uppercas";
+            o_DelegatesMenuToBuilld.MenuItems[0].MenuItems[1].Title = "Count Uppercases";
             o_DelegatesMenuToBuilld.MenuItems[0].MenuItems[1].CurrentMenuItemsMainMenu = o_DelegatesMenuToBuilld.MenuItems[0];
             o_DelegatesMenuToBuilld.MenuItems[1].AttachSubObserver(new Delegates.MenuItem());
             o_DelegatesMenuToBuilld.MenuItems[1].MenuItems[0].Title = "Show Date";
